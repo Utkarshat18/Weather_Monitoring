@@ -1,6 +1,11 @@
-# React + Vite
+# Weather Monitoring
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Initial Commands- npm create vite@latest
+npm install
+npm run dev
+http://localhost:5173/
+git setup
+
 
 Currently, two official plugins are available:
 
