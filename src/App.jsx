@@ -1,14 +1,13 @@
 import './App.css'
 import UilReact from "@iconscout/react-unicons/icons/uil-react";
+import Navbar from './Component/Navbar/Navbar'
+
 
 function App() {
 
   return (
     <>
-    <h1 className="text-3xl font-bold text-red-500">
-      Hello world!
-    </h1>
-    <UilReact/>
+    <Navbar/>
     </>
   )
 }
