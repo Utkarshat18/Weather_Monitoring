@@ -31,7 +31,7 @@ function Navbar() {
 
   return (
     <>
-    <div className='flex items-center justify-around bg-blue-500 p-5'>
+    <div className='flex items-center justify-around p-5'>
      {cities.map((city)=>(
        <button key={city.id} className='text-white '>{city.title}</button>
       ))}
