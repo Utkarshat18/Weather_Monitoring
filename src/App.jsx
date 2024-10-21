@@ -10,12 +10,12 @@ import './assets/clear.jpg'
 function App() {
 
   return (
-    <div className="bg-[url('./assets/clear.jpg')] bg-cover bg-center bg-no-repeat pb-12 font-serif">
+    <>
     <Navbar/>
     <Searchbar/>
     <DateTimeLocation/>
     <Container/>
-    </div>
+    </>
   )
 }
 
