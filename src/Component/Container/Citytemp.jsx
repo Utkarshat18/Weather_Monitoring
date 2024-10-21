@@ -31,9 +31,9 @@ function Citytemp() {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row items-center justify-around mb-2'>
+            <div className='flex flex-row items-center justify-around mb-2 text-white'>
                 <UilSun />
-                <p className='font-light'>
+                <p className='font-light '>
                     Rise: <span className='font-medium ml-1'>6:45 AM </span>
                 </p>
                 <p className='font-light'>|</p>
@@ -42,7 +42,7 @@ function Citytemp() {
                     Set: <span className='font-medium ml-1'>6:30 PM </span>
                 </p>
             </div>
-            <div className='flex flex-row items-center justify-between space-x-1 '>
+            <div className='flex flex-row items-center justify-between space-x-1 text-white '>
                 <UilArrowDown/>
                 <p className='font-light'>
                     Min Temp: <span className='font-medium ml-1'>34° C</span>
