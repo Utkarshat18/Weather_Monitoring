@@ -27,7 +27,7 @@ function DateTimeLocation() {
   const formattedTime = currentTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
 
   return (
-    <div className='flex items-center justify-center mt-4'>
+    <div className='flex items-center justify-center mt-4 mb-5'>
       <p className='text-white text-xl'>{formattedDate} | Local time: {formattedTime}</p>
     </div>
   );

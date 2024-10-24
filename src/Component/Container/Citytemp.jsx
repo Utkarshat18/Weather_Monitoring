@@ -16,7 +16,7 @@ function Citytemp({ weatherData }) {
     return (
         <div className='backdrop-blur-sm p-12 ml-0 '>
             <div className='flex flex-col items-center justify-around py-6 text-xl text-cyan-300'>
-                <p className='text-3xl text-white '>Berlin, DE</p>
+                <p className='text-3xl text-white '>{weatherData.name}, {weatherData.sys.country}</p>
                 <p className='text-white mt-5 uppercase'>{weatherData.weather[0].description}</p>
             </div>
             <div className='flex flex-row items-center justify-around text-white py-8 m-0'>
