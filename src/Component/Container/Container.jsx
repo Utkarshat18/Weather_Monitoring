@@ -11,25 +11,32 @@ import DateTimeLocation from '../DateTimeLocation/DateTimeLocation';
 function Container() {
   const [weatherData, setWeatherData] = useState(null);
   const [city, setCity] = useState("Pune");
+  const [lastRefresh, setLastRefresh] = useState(null); // State for last refresh time
+  const fetchInterval = 5*60 * 1000; // 5 minutes in milliseconds
 
   useEffect(() => {
     const fetchWeatherForCity = async () => {
       try {
-        const data = await Weatherservices.fetchWeather(city); // Fetch for Berlin
+        const data = await Weatherservices.fetchWeather(city);
         setWeatherData(data);
+        setLastRefresh(new Date()); // Update last refresh time
       } catch (error) {
         console.error('Error fetching weather data:', error);
       }
     };
 
-    fetchWeatherForCity();
-  }, [city]); // Add city as a dependency
+    fetchWeatherForCity(); // Initial fetch
+
+    const intervalId = setInterval(fetchWeatherForCity, fetchInterval);
+
+    return () => clearInterval(intervalId); // Cleanup on unmount
+  }, [city, fetchInterval]);
 
   return (
     <div>
-      <Navbar setCity={setCity} /> {/* Pass setCity as a prop to Navbar */}
+      <Navbar setCity={setCity} />
       <Searchbar setCity={setCity} className="pt-5" />
-      <DateTimeLocation/>
+      <DateTimeLocation />
       <div className='flex flex-row justify-around mt-7 '>
         <div>
           <Citytemp weatherData={weatherData} />
@@ -39,6 +46,11 @@ function Container() {
           <Weeklyforcast heading="Daily forcast" />
         </div>
       </div>
+      {lastRefresh && ( // Display last refresh time if available
+        <div className='text-center text-white mt-4'>
+          Last refreshed: {lastRefresh.toLocaleTimeString()}
+        </div>
+      )}
     </div>
   )
 }

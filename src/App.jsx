@@ -3,7 +3,7 @@ import './App.css'
 // import Searchbar from './Component/Searchbar/Searchbar'
 // import DateTimeLocation from './Component/DateTimeLocation/DateTimeLocation'
 import Container  from './Component/Container/Container';
-import './assets/clear.jpg'
+// import './assets/clear.jpg'
 //import getformattedweatherdata from './Services/Weatherservices';
 
 
