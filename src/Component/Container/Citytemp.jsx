@@ -13,6 +13,10 @@ function Citytemp({ weatherData, lastRefresh }) {
         );
     }
 
+    // Convert sunrise and sunset times from UNIX timestamp to a readable format
+    const sunriseTime = new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString();
+    const sunsetTime = new Date(weatherData.sys.sunset * 1000).toLocaleTimeString();
+
     return (
         <div className='backdrop-blur-sm p-12 ml-0 '>
             {lastRefresh && (
@@ -48,12 +52,12 @@ function Citytemp({ weatherData, lastRefresh }) {
             <div className='flex flex-row items-center justify-around mb-2 text-white'>
                 <UilSun />
                 <p className='font-light '>
-                    Rise: <span className='font-medium ml-1'>6:45 AM</span>
+                    Rise: <span className='font-medium ml-1'>{sunriseTime}</span>
                 </p>
                 <p className='font-light'>|</p>
                 <UilSunset />
                 <p className='font-light'>
-                    Set: <span className='font-medium ml-1'>6:30 PM</span>
+                    Set: <span className='font-medium ml-1'>{sunsetTime}</span>
                 </p>
             </div>
             <div className='flex flex-row items-center justify-between space-x-1 text-white'>
