@@ -10,6 +10,7 @@ import DateTimeLocation from '../DateTimeLocation/DateTimeLocation';
 
 function Container() {
   const [weatherData, setWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState([]); // State for forecast data
   const [city, setCity] = useState("Pune");
   const [lastRefresh, setLastRefresh] = useState(null); // State for last refresh time
   const fetchInterval = 5*60 * 1000; // 5 minutes in milliseconds
@@ -17,9 +18,12 @@ function Container() {
   useEffect(() => {
     const fetchWeatherForCity = async () => {
       try {
-        const data = await Weatherservices.fetchWeather(city);
-        setWeatherData(data);
+        const weather = await Weatherservices.fetchWeather(city);
+        setWeatherData(weather);
         setLastRefresh(new Date()); // Update last refresh time
+
+        const forecast = await Weatherservices.fetchForecast(city);
+        setForecastData(forecast.list); // Set forecast data
       } catch (error) {
         console.error('Error fetching weather data:', error);
       }
@@ -42,8 +46,8 @@ function Container() {
           <Citytemp weatherData={weatherData} lastRefresh={lastRefresh} />
         </div>
         <div className='flex flex-col justify-center '>
-          <Timelyforcast heading="hourly forcast" />
-          <Weeklyforcast heading="Daily forcast" />
+          <Timelyforcast heading="hourly forecast" forecastData={forecastData} />
+          <Weeklyforcast heading="Daily Summary" weatherData={weatherData}/>
         </div>
       </div>
     </div>

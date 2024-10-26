@@ -2,13 +2,21 @@
   margin: 0px;
   padding: 0px;
   text-align: center;
-  /* background-color: peru; */
   height: 100%;
   width: 100%;
-  background-image: url('./assets/clear.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* padding-bottom: 12px; */
 }
 
+.weather-clear {
+  background-image: url('./assets/clear.jpg');
+}
+
+.weather-rainy {
+  background-image: url('./assets/rainy.jpg');
+}
+
+.weather-cloudy {
+  background-image: url('./assets/cloudy.jpg');
+}
