@@ -39,18 +39,13 @@ function Container() {
       <DateTimeLocation />
       <div className='flex flex-row justify-around mt-7 '>
         <div>
-          <Citytemp weatherData={weatherData} />
+          <Citytemp weatherData={weatherData} lastRefresh={lastRefresh} />
         </div>
         <div className='flex flex-col justify-center '>
           <Timelyforcast heading="hourly forcast" />
           <Weeklyforcast heading="Daily forcast" />
         </div>
       </div>
-      {lastRefresh && ( // Display last refresh time if available
-        <div className='text-center text-white mt-4'>
-          Last refreshed: {lastRefresh.toLocaleTimeString()}
-        </div>
-      )}
     </div>
   )
 }

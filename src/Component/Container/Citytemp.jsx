@@ -1,7 +1,7 @@
 import React from 'react';
 import { UilArrowUp, UilArrowDown, UilTemperature, UilTear, UilWind, UilSun, UilSunset } from "@iconscout/react-unicons";
 
-function Citytemp({ weatherData }) {
+function Citytemp({ weatherData, lastRefresh }) {
     console.log("The data is ", weatherData);
 
     // Check if weatherData is available and has the required properties
@@ -15,6 +15,11 @@ function Citytemp({ weatherData }) {
 
     return (
         <div className='backdrop-blur-sm p-12 ml-0 '>
+            {lastRefresh && (
+                <div className='text-center text-white mt-4'>
+                    Last refreshed: {lastRefresh.toLocaleTimeString()}
+                </div>
+            )}
             <div className='flex flex-col items-center justify-around py-6 text-xl text-cyan-300'>
                 <p className='text-3xl text-white '>{weatherData.name}, {weatherData.sys.country}</p>
                 <p className='text-white mt-5 uppercase'>{weatherData.weather[0].description}</p>
@@ -62,6 +67,7 @@ function Citytemp({ weatherData }) {
                     Max Temp: <span className='font-medium ml-1'>{weatherData.main.temp_max}° C</span>
                 </p>
             </div>
+
         </div>
     );
 }
