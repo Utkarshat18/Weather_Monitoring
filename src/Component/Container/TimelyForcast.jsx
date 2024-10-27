@@ -34,7 +34,8 @@ function TimelyForcast({ heading, forecastData }) {
         const updateBackground = () => {
             const weatherCondition = forecastData[0]?.weather[0]?.main.toLowerCase();
             const rootElement = document.getElementById('root');
-
+            console.log("The weather condition is ", weatherCondition);
+            
             if (weatherCondition === 'clear') {
                 rootElement.className = 'weather-clear';
             } else if (weatherCondition === 'rain' || weatherCondition==='haze') {

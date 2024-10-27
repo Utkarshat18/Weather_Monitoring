@@ -11,13 +11,13 @@
 }
 
 .weather-clear {
-  background-image: url('./assets/clear.jpg');
+  background-image: url('./assets/clear.jpg')!important;
 }
 
 .weather-rainy {
-  background-image: url('./assets/rainy.jpg');
+  background-image: url('./assets/Rainy.jpg')!important;
 }
 
 .weather-cloudy {
-  background-image: url('./assets/cloudy.jpg');
+  background-image: url('./assets/cloudy.jpg')!important;
 }
