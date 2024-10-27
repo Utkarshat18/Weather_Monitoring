@@ -19,7 +19,7 @@ const fetchWeather = async (city) => {
 const fetchForecast = async (city) => {
   try {
     const response = await axios.get(
-      `${forecastUrl}?q=${city}&appid=${apiKey}&units=metric`
+      `${forecastUrl}?q=${city}&appid=${import.meta.env.VITE_API_KEY}&units=metric`
     );
     return response.data;
   } catch (error) {
