@@ -1,7 +1,7 @@
 // import React from 'react'
 import Citytemp from './Citytemp.jsx'
-import Timelyforcast from './Timelyforcast.jsx'
-import Weeklyforcast from './Weeklyforcast.jsx'
+import TimelyForcast from './TimelyForcast.jsx'
+import WeeklyForcast from './Weeklyforcast.jsx'
 import React, { useState, useEffect } from 'react'
 import Weatherservices from '../../Services/Weatherservices';
 import Searchbar from '../Searchbar/Searchbar'; // Import Searchbar
@@ -43,8 +43,8 @@ function Container() {
           <Citytemp weatherData={weatherData} lastRefresh={lastRefresh} />
         </div>
         <div className='flex flex-col justify-center '>
-          <Timelyforcast heading="hourly forecast" forecastData={forecastData} />
-          <Weeklyforcast heading="Daily Summary" weatherData={weatherData}/>
+          <TimelyForcast heading="hourly forecast" forecastData={forecastData} />
+          <WeeklyForcast heading="Daily Summary" weatherData={weatherData}/>
         </div>
       </div>
     </div>

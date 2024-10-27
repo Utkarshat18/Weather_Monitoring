@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Weeklyforcast({ heading, weatherData }) {
+function WeeklyForcast({ heading, weatherData }) {
     console.log("The summary is ", weatherData);
     if (!weatherData || !weatherData.weather || !weatherData.main || !weatherData.wind) {
         return (
@@ -22,4 +22,4 @@ function Weeklyforcast({ heading, weatherData }) {
     )
 }
 
-export default Weeklyforcast
+export default WeeklyForcast

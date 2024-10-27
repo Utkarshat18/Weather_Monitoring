@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Timelyforcast({ heading, forecastData }) {
+function TimelyForcast({ heading, forecastData }) {
     console.log("The data for forcast ", forecastData);
     const [filteredData, setFilteredData] = useState([]);
 
@@ -81,4 +81,4 @@ function Timelyforcast({ heading, forecastData }) {
     )
 }
 
-export default Timelyforcast
+export default TimelyForcast
