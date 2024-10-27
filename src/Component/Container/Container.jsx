@@ -20,6 +20,7 @@ function Container() {
       try {
         const weather = await Weatherservices.fetchWeather(city);
         setWeatherData(weather);
+        console.log("The weather data is", weatherData);
         setLastRefresh(new Date()); // Update last refresh time
 
         const forecast = await Weatherservices.fetchForecast(city);
@@ -30,11 +31,7 @@ function Container() {
     };
 
     fetchWeatherForCity(); // Initial fetch
-
-    const intervalId = setInterval(fetchWeatherForCity, fetchInterval);
-
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, [city, fetchInterval]);
+  }, [city]);
 
   return (
     <div>

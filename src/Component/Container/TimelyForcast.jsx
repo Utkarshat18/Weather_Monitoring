@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 function Timelyforcast({ heading, forecastData }) {
     console.log("The data for forcast ", forecastData);
@@ -36,7 +37,7 @@ function Timelyforcast({ heading, forecastData }) {
 
             if (weatherCondition === 'clear') {
                 rootElement.className = 'weather-clear';
-            } else if (weatherCondition === 'rain') {
+            } else if (weatherCondition === 'rain' || weatherCondition==='haze') {
                 rootElement.className = 'weather-rainy';
             } else if (weatherCondition === 'clouds') {
                 rootElement.className = 'weather-cloudy';
@@ -45,6 +46,21 @@ function Timelyforcast({ heading, forecastData }) {
 
         updateBackground();
     }, [forecastData]);
+
+    // useEffect(() => {
+        // const saveWeatherData = async () => {
+        //     try {
+        //         await axios.post('http://localhost:5000/api/weather', forecastData);
+        //         console.log('Weather data saved successfully');
+        //     } catch (error) {
+        //         console.error('Error saving weather data:', error);
+        //     }
+        // };
+
+    //     if (forecastData) {
+    //         saveWeatherData();
+    //     }
+    // }, [forecastData]);
 
     return (
         <div className='backdrop-blur-sm mb-7 p-7'>

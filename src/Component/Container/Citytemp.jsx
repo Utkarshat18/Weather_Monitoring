@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { UilArrowUp, UilArrowDown, UilTemperature, UilTear, UilWind, UilSun, UilSunset } from "@iconscout/react-unicons";
+import axios from 'axios';
 
 function Citytemp({ weatherData, lastRefresh }) {
-    console.log("The data is ", weatherData);
+    useEffect(() => {
+        if (weatherData) {
+            console.log("The data is ", weatherData);
+            axios.post('http://localhost:5000/api/weather', weatherData);
+        }
+    }, [weatherData]); // Dependency array ensures this runs only when weatherData changes
 
     // Check if weatherData is available and has the required properties
     if (!weatherData || !weatherData.weather || !weatherData.main || !weatherData.wind) {
