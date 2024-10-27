@@ -1,7 +1,7 @@
 // import React from 'react'
-import Citytemp from './Citytemp'
-import Timelyforcast from './Timelyforcast'
-import Weeklyforcast from './Weeklyforcast'
+import Citytemp from './Citytemp.jsx'
+import Timelyforcast from './Timelyforcast.jsx'
+import Weeklyforcast from './Weeklyforcast.jsx'
 import React, { useState, useEffect } from 'react'
 import Weatherservices from '../../Services/Weatherservices';
 import Searchbar from '../Searchbar/Searchbar'; // Import Searchbar
