@@ -5,9 +5,9 @@
   height: 100%;
   width: 100%;
   background-size: cover;
-  background-color: aqua;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: url('./assets/clear.jpg');
 }
 
 .weather-clear {
